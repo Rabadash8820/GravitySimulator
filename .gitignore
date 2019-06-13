@@ -1,0 +1,9 @@
+# Unity
+Library/
+Logs/
+Temp/
+
+# Visual Studio
+.vs/
+bin/
+obj/
