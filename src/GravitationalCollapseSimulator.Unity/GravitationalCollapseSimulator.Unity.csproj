@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <DebugType>portable</DebugType>   <!-- So that Unity doesn't have to generate .mdb files -->
+    <LangVersion>latest</LangVersion>
+    <OutputPath>../../$(SolutionName)/Assets/$(SolutionName)/Plugins</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../../../../Danware/UnityUtil/UnityUtil/UnityUtil.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup Label="Unity DLL References">
+    <UnityVersion>2019.1.6f1</UnityVersion>
+    <ReferenceUnityEngineDll>true</ReferenceUnityEngineDll>
+    <ReferenceUnityEngineUiDll>true</ReferenceUnityEngineUiDll>
+  </PropertyGroup>
+  <Import Project="../../../../../Danware/UnityUtil/UnityUtil/UnityDllReferences.props"/>
+
+  <Target Name="DeleteUnnecessaryBuildOutputs" AfterTargets="AfterBuild">
+    <ItemGroup Label="UnnecessaryBuildOutputs">
+      <Unnecessary Include="$(OutDir)/$(ProjectName).deps.json" />
+      <Unnecessary Include="$(OutDir)/Sirenix.OdinInspector.Attributes.dll" />
+    </ItemGroup>
+    <Message Importance="high" Text="Clearing unnecessary build outputs from the Unity Assets/Editor/ folder" />
+    <Delete Files="%(Unnecessary.Identity)" />
+  </Target>
+
+</Project>
