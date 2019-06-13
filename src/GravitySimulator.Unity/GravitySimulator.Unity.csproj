@@ -11,6 +11,10 @@
     <ProjectReference Include="../../../../../Danware/UnityUtil/UnityUtil/UnityUtil.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="../../$(SolutionName)/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll" />
+  </ItemGroup>
+
   <PropertyGroup Label="Unity DLL References">
     <UnityVersion>2019.1.6f1</UnityVersion>
     <ReferenceUnityEngineDll>true</ReferenceUnityEngineDll>

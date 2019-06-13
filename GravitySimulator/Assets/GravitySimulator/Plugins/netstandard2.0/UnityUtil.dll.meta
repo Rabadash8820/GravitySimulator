@@ -1,12 +1,11 @@
 fileFormatVersion: 2
-guid: effb737609d138a4d8cfc8c9b96d4ced
+guid: f8ab1a9610bccb34ebe0bfc50983773b
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2
   iconMap: {}
   executionOrder:
-    UnityEngine.Configurator: -50
-    UnityEngine.DependencyInjector: -80
+    UnityEngine.DependencyInjector: -50
     UnityEngine.RandomNumberGenerator: -20
   defineConstraints: []
   isPreloaded: 0

@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnityUtil.Editor", "..\..\.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnityUtil.Test", "..\..\..\Danware\UnityUtil\UnityUtil.Test\UnityUtil.Test.csproj", "{C7CA835B-05D7-4DDB-8F96-51A73E469D6C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GravitationalCollapseSimulator.Unity", "GravitationalCollapseSimulator.Unity\GravitationalCollapseSimulator.Unity.csproj", "{7D644EE9-279D-4D65-8CFD-C96A60E91296}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GravitySimulator.Unity", "GravitySimulator.Unity\GravitySimulator.Unity.csproj", "{7D644EE9-279D-4D65-8CFD-C96A60E91296}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
