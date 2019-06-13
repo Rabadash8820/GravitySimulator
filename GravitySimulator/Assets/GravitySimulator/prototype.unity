@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 1518632906022604536, guid: 2c8f4f5e2dbc6d64f856e2fe05f9fe8d, type: 3}
-  TotalClones: 200
+  TotalClones: 50
   CloneNameTemplate: particle-{0}
   CloneParent: {fileID: 1161502118}
   SpawnOnStart: 0
@@ -500,6 +500,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ConfigurationSources: []
+--- !u!1 &1141918290
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1141918291}
+  - component: {fileID: 1141918292}
+  m_Layer: 0
+  m_Name: GravitySimulator2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1141918291
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141918290}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -50, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1161502118}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1141918292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141918290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1700532746, guid: 9236a4b8f1e53a9418de3972e76c587b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfigKey: 
+  Config: {fileID: 11400000, guid: 1755eccd72ac1fb4fb4c50c55ed89451, type: 2}
 --- !u!1 &1161502117
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,7 +557,7 @@ GameObject:
   m_Layer: 0
   m_Name: World
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -526,7 +571,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1429490648}
+  - {fileID: 1691242760}
+  - {fileID: 1141918291}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -586,7 +634,7 @@ GameObject:
   - component: {fileID: 1429490648}
   - component: {fileID: 1429490649}
   m_Layer: 0
-  m_Name: GravitySimulator
+  m_Name: GravitySimulator0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -599,12 +647,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1429490647}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1437779484}
-  m_RootOrder: 6
+  m_Father: {fileID: 1161502118}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1429490649
 MonoBehaviour:
@@ -619,9 +667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ConfigKey: 
-  TickPeriod: 0.05
-  GravitationalConstant: 15
-  TimeScale: 1
+  Config: {fileID: 11400000, guid: 1755eccd72ac1fb4fb4c50c55ed89451, type: 2}
 --- !u!1 &1437779483
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,10 +701,54 @@ Transform:
   - {fileID: 1207721392}
   - {fileID: 47175495}
   - {fileID: 1721455499}
-  - {fileID: 1429490648}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1691242759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1691242760}
+  - component: {fileID: 1691242761}
+  m_Layer: 0
+  m_Name: GravitySimulator1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1691242760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691242759}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -50}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1161502118}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1691242761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691242759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1700532746, guid: 9236a4b8f1e53a9418de3972e76c587b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfigKey: 
+  Config: {fileID: 11400000, guid: 1755eccd72ac1fb4fb4c50c55ed89451, type: 2}
 --- !u!1 &1721455498
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,7 +793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxXDistanceFromOrigin: 40
-  MaxYDistanceFromOrigin: 4
+  MaxYDistanceFromOrigin: 0
   MaxZDistanceFromOrigin: 40
   MinSpeed: 5
   MaxSpeed: 15

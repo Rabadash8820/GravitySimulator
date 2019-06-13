@@ -12,10 +12,7 @@ namespace GravitySimulator.Unity {
         private IList<MassParticle> _particles = new List<MassParticle>();
         private float _tSinceTick = 0f;
 
-        public float TickPeriod = 0.1f;
-        public float GravitationalConstant = 5;
-        [Min(0f)]
-        public float TimeScale = 1f;
+        public SimulationConfig Config;
 
         protected override void BetterAwake() {
             base.BetterAwake();
@@ -25,7 +22,7 @@ namespace GravitySimulator.Unity {
         }
         private void Start() {
             _spawner.Spawn();
-            _randomizer.RandomizeParticles(_particles, _spawner.transform);
+            _randomizer.RandomizeParticles(_particles, transform);
         }
 
         public void Inject(MultiSpawner spawner, ParticleRandomizer randomizer) {
@@ -39,13 +36,11 @@ namespace GravitySimulator.Unity {
         }
 
         private void doFixedUpdate(float fixedDeltaTime) {
-            Time.timeScale = TimeScale;
-
             // Only continue if another tick has passed...
             _tSinceTick += fixedDeltaTime;
-            if (_tSinceTick < TickPeriod)
+            if (_tSinceTick < Config.TickPeriod)
                 return;
-            _tSinceTick -= TickPeriod;
+            _tSinceTick -= Config.TickPeriod;
 
             // Calculate gravitational forces
             var _forces = new Vector3[_particles.Count];
@@ -56,7 +51,7 @@ namespace GravitySimulator.Unity {
                 for (p1 = p0 + 1; p1 < _particles.Count; ++p1) {
                     vectBw = (_particles[p1].Rigidbody.position - _particles[p0].Rigidbody.position);
                     distBw = vectBw.magnitude;
-                    forceMag = GravitationalConstant * _particles[p0].Rigidbody.mass * _particles[p1].Rigidbody.mass / (distBw * distBw);
+                    forceMag = Config.GravitationalConstant * _particles[p0].Rigidbody.mass * _particles[p1].Rigidbody.mass / (distBw * distBw);
                     forceBw = forceMag * vectBw / distBw;
                     _forces[p0] += forceBw;
                     _forces[p1] -= forceBw;
