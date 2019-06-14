@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: simulation-config
   m_EditorClassIdentifier: 
   TickPeriod: 0.1
-  GravitationalConstant: 20
+  GravitationalConstant: 30

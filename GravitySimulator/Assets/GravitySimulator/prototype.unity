@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 1518632906022604536, guid: 2c8f4f5e2dbc6d64f856e2fe05f9fe8d, type: 3}
-  TotalClones: 50
+  TotalClones: 300
   CloneNameTemplate: particle-{0}
   CloneParent: {fileID: 1161502118}
   SpawnOnStart: 0
@@ -516,7 +516,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1141918291
 Transform:
   m_ObjectHideFlags: 0
@@ -720,7 +720,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1691242760
 Transform:
   m_ObjectHideFlags: 0

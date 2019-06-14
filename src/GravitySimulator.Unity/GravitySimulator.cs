@@ -1,10 +1,21 @@
 ﻿using Sirenix.OdinInspector;
 using System.Collections.Generic;
+using Unity.Collections;
+using Unity.Jobs;
 using UnityEngine;
 
 namespace GravitySimulator.Unity {
 
     public class GravitySimulator : Updatable {
+
+        private struct GravityJob : IJob {
+            public Vector3 Position0;
+            public Vector3 Position1;
+            public NativeArray<Vector3> Force0To1;
+            public void Execute() {
+                
+            }
+        }
 
         private MultiSpawner _spawner;
         private ParticleRandomizer _randomizer;
@@ -13,6 +24,7 @@ namespace GravitySimulator.Unity {
         private float _tSinceTick = 0f;
 
         public SimulationConfig Config;
+        public bool UseJobs = false;
 
         protected override void BetterAwake() {
             base.BetterAwake();
