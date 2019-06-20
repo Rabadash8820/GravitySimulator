@@ -3,15 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnityUtil", "..\..\..\Danware\UnityUtil\UnityUtil\UnityUtil.csproj", "{DDB1C10E-5E55-4205-AE70-5BA9EF0AABA5}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnityUtil.Editor", "..\..\..\Danware\UnityUtil\UnityUtil.Editor\UnityUtil.Editor.csproj", "{FE9F4D93-FB77-4BAB-9C25-B3390411BACA}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnityUtil.Test", "..\..\..\Danware\UnityUtil\UnityUtil.Test\UnityUtil.Test.csproj", "{C7CA835B-05D7-4DDB-8F96-51A73E469D6C}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GravitySimulator.Unity", "GravitySimulator.Unity\GravitySimulator.Unity.csproj", "{7D644EE9-279D-4D65-8CFD-C96A60E91296}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GravitySimulator.Test", "GravitySimulator.Test\GravitySimulator.Test.csproj", "{CEA8B66B-071E-4FB0-BC77-0E53E8763C9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GravitySimulator.Test", "GravitySimulator.Test\GravitySimulator.Test.csproj", "{CEA8B66B-071E-4FB0-BC77-0E53E8763C9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,18 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DDB1C10E-5E55-4205-AE70-5BA9EF0AABA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DDB1C10E-5E55-4205-AE70-5BA9EF0AABA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DDB1C10E-5E55-4205-AE70-5BA9EF0AABA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DDB1C10E-5E55-4205-AE70-5BA9EF0AABA5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FE9F4D93-FB77-4BAB-9C25-B3390411BACA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FE9F4D93-FB77-4BAB-9C25-B3390411BACA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FE9F4D93-FB77-4BAB-9C25-B3390411BACA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FE9F4D93-FB77-4BAB-9C25-B3390411BACA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C7CA835B-05D7-4DDB-8F96-51A73E469D6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C7CA835B-05D7-4DDB-8F96-51A73E469D6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C7CA835B-05D7-4DDB-8F96-51A73E469D6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C7CA835B-05D7-4DDB-8F96-51A73E469D6C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7D644EE9-279D-4D65-8CFD-C96A60E91296}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7D644EE9-279D-4D65-8CFD-C96A60E91296}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D644EE9-279D-4D65-8CFD-C96A60E91296}.Release|Any CPU.ActiveCfg = Release|Any CPU

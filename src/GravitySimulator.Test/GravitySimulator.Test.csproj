@@ -2,9 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <DebugType>portable</DebugType>   <!-- So that Unity doesn't have to generate .mdb files -->
     <LangVersion>latest</LangVersion>
     <OutputPath>../../$(SolutionName)/Assets/$(SolutionName)/Editor/Tests</OutputPath>
+    <UnityVersion>2019.1.6f1</UnityVersion>
+    <ReferenceUnityEngineTestRunner>true</ReferenceUnityEngineTestRunner>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,24 +13,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Danware\UnityUtil\UnityUtil.Test\UnityUtil.Test.csproj" />
     <ProjectReference Include="..\GravitySimulator.Unity\GravitySimulator.Unity.csproj" />
   </ItemGroup>
 
-  <PropertyGroup Label="Unity DLL References">
-    <UnityVersion>2019.1.6f1</UnityVersion>
-    <ReferenceUnityEngineDll>true</ReferenceUnityEngineDll>
-    <ReferenceUnityEngineTestRunnerDll>true</ReferenceUnityEngineTestRunnerDll>
-  </PropertyGroup>
-  <Import Project="../../../../../Danware/UnityUtil/UnityUtil/UnityDllReferences.props" />
-
   <Target Name="DeleteUnnecessaryBuildOutputs" AfterTargets="AfterBuild">
     <ItemGroup Label="UnnecessaryBuildOutputs">
-      <Unnecessary Include="$(OutDir)/UnityUtil.*" />
-      <Unnecessary Remove="$(OutDir)/UnityUtil.Test.*" />
-      <Unnecessary Include="$(OutDir)/$(SolutionName).*" />
-      <Unnecessary Remove="$(OutDir)/$(SolutionName).Test.*" />
       <Unnecessary Include="$(OutDir)/$(ProjectName).deps.json" />
+      <Unnecessary Include="$(OutDir)/$(SolutionName).Unity.*" />
+      <Unnecessary Include="$(OutDir)/Sirenix.OdinInspector.Attributes.*" />
     </ItemGroup>
     <Message Importance="high" Text="Clearing unnecessary build outputs from the Unity Assets/Tests/ folder" />
     <Delete Files="%(Unnecessary.Identity)" />

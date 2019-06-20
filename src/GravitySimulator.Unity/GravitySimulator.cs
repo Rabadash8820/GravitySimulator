@@ -20,7 +20,7 @@ namespace GravitySimulator.Unity {
         private MultiSpawner _spawner;
         private ParticleRandomizer _randomizer;
 
-        private IList<MassParticle> _particles = new List<MassParticle>();
+        private readonly IList<MassParticle> _particles = new List<MassParticle>();
         private float _tSinceTick = 0f;
 
         public SimulationConfig Config;
@@ -55,7 +55,7 @@ namespace GravitySimulator.Unity {
             _tSinceTick -= Config.TickPeriod;
 
             // Calculate gravitational forces
-            var _forces = new Vector3[_particles.Count];
+            var forces = new Vector3[_particles.Count];
             Vector3 vectBw, forceBw;
             float distBw, forceMag;
             int p0, p1;
@@ -65,14 +65,14 @@ namespace GravitySimulator.Unity {
                     distBw = vectBw.magnitude;
                     forceMag = Config.GravitationalConstant * _particles[p0].Rigidbody.mass * _particles[p1].Rigidbody.mass / (distBw * distBw);
                     forceBw = forceMag * vectBw / distBw;
-                    _forces[p0] += forceBw;
-                    _forces[p1] -= forceBw;
+                    forces[p0] += forceBw;
+                    forces[p1] -= forceBw;
                 }
             }
 
             // Apply gravitational forces
             for (p0 = 0; p0 < _particles.Count; ++p0)
-                _particles[p0].Rigidbody.AddForce(_forces[p0]);
+                _particles[p0].Rigidbody.AddForce(forces[p0]);
         }
 
         public void AddParticle(MassParticle particle) => _particles.Add(particle);
